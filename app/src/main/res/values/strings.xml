@@ -1,5 +1,9 @@
 <resources>
     <string name="app_name">MoneyTracker</string>
     <string name="app_name2">MoneyTracker2k17</string>
+    <string name="title">Название</string>
+    <string name="price_string">0 &#8381; </string>
+    <string name="badge_r">r</string>
+    <string name="title2"></string>
 
 </resources>
