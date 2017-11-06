@@ -8,15 +8,16 @@ import android.text.TextWatcher;
 import android.widget.EditText;
 import android.widget.ImageButton;
 
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-      final EditText titleEdit = findViewById(R.id.name);
-      final ImageButton addButton = findViewById(R.id.add);
-      final EditText titleEdit2=findViewById(R.id.name2);
+        final EditText titleEdit = findViewById(R.id.name);
+        final ImageButton addButton = findViewById(R.id.add);
+        final EditText titleEdit2 = findViewById(R.id.name2);
 
         titleEdit.addTextChangedListener(new TextWatcher() {
             @Override
@@ -26,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-                if(titleEdit.getText().length()!=0&& titleEdit2.getText().length()!=0)
+                if (titleEdit.getText().length() != 0 && titleEdit2.getText().length() != 0)
                     addButton.setEnabled(!TextUtils.isEmpty(s));
             }
 
@@ -53,7 +54,6 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
-
 
 
     }
