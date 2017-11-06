@@ -14,27 +14,27 @@
 
     <TextView
         android:id="@+id/item_name"
-
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="1"
-        android:background="@color/item_bg"
+        android:background="@color/item_name_bg"
         android:gravity="center"
         android:paddingLeft="16dp"
         android:paddingRight="16dp"
+        android:textColor="@color/colorWhite"
         android:textSize="20sp"
         tools:text="Молоко" />
 
     <TextView
         android:id="@+id/item_price"
-
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_weight="0"
-        android:background="@color/price_bg"
+        android:background="@color/item_price_bg"
         android:gravity="center"
         android:paddingLeft="16dp"
         android:paddingRight="16dp"
+        android:textColor="@color/colorWhite"
         android:textSize="24sp"
         tools:text="35 ₽" />
 

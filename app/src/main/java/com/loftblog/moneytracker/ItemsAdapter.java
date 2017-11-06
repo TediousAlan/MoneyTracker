@@ -42,32 +42,33 @@ public class ItemsAdapter extends RecyclerView.Adapter<ItemsAdapter.ItemViewHold
     }
 
     @Override
+    public ItemViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item, parent, false);
+        return new ItemViewHolder(view);
+    }
+
+    @Override
     public void onBindViewHolder(ItemViewHolder holder, int position) {
         Item item = items.get(position);
         holder.bind(item);
     }
 
-    @Override
-    public ItemViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item, parent, false);
-        return new ItemViewHolder(view);
-
-    }
 
     static class ItemViewHolder extends RecyclerView.ViewHolder {
         private TextView name;
         private TextView price;
 
 
-        public ItemViewHolder(View itemView) {
+        ItemViewHolder(View itemView) {
             super(itemView);
             name = itemView.findViewById(R.id.item_name);
             price = itemView.findViewById(R.id.item_price);
         }
 
-        public void bind(Item item) {
-            price.setText(item.getPrice());
+        void bind(Item item) {
             name.setText(item.getName());
+            price.setText(String.valueOf(item.getPrice() + "\u20BD"));
+
         }
     }
 }

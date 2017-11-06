@@ -6,6 +6,6 @@
     <color name="colorGreen">#1f8e15</color>
     <color name="colorBlue">#84c0c5</color>
     <color name="colorWhite">#ffffff</color>
-<color name="item_bg">#fcc31e</color>
-    <color name="price_bg">#985305</color>
+    <color name="item_name_bg">#fcc31e</color>
+    <color name="item_price_bg">#985305</color>
 </resources>
