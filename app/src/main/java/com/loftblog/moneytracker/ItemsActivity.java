@@ -5,7 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
-public class itemsActivity extends AppCompatActivity {
+public class ItemsActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -13,11 +13,10 @@ public class itemsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_items);
 
 
-        RecyclerView recycler= findViewById(R.id.recycler);
+        RecyclerView recycler = findViewById(R.id.recycler);
         recycler.setLayoutManager(new LinearLayoutManager(this));
-recycler.setAdapter(new itemsAdapter());
+        recycler.setAdapter(new ItemsAdapter());
     }
-
 
 
 }

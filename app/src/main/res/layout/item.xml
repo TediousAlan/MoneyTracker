@@ -3,39 +3,39 @@
 
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="horizontal"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:minHeight="65dp"
     android:layout_margin="5dp"
+    android:minHeight="65dp"
+    android:orientation="horizontal"
 
-   >
+    >
 
 
     <TextView
-        style="@style/ItemText"
-        android:paddingRight="16dp"
-        android:paddingLeft="16dp"
-        android:gravity="center"
         android:id="@+id/item_name"
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:layout_weight="1"
         android:background="@color/item_bg"
+        android:gravity="center"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
         android:textSize="20sp"
-        tools:text="Молоко"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        tools:text="Молоко" />
 
     <TextView
-        style="@style/ItemText"
-        android:paddingRight="16dp"
-        android:paddingLeft="16dp"
-        android:gravity="center"
         android:id="@+id/item_price"
+
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
         android:layout_weight="0"
         android:background="@color/price_bg"
+        android:gravity="center"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
         android:textSize="24sp"
-        tools:text="35 ₽"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent" />
+        tools:text="35 ₽" />
 
 </LinearLayout>

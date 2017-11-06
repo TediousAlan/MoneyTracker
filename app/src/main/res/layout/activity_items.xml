@@ -3,16 +3,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.loftblog.moneytracker.itemsActivity"
-    android:background="@drawable/bg_pattern">
+    android:background="@drawable/bg_pattern"
+    tools:context="com.loftblog.moneytracker.ItemsActivity">
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recycler"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:paddingBottom="15dp"
         android:paddingLeft="5dp"
         android:paddingRight="5dp"
-        android:paddingBottom="15dp"
         android:paddingTop="15dp"
         tools:listitems="@Layout/item"
 

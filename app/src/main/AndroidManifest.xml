@@ -13,7 +13,7 @@
 
         </activity>
 
-        <activity android:name=".itemsActivity">
+        <activity android:name=".ItemsActivity">
 
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
