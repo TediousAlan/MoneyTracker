@@ -4,6 +4,15 @@
     <string name="title">Название</string>
     <string name="price_string">&#8381;</string>
     <string name="badge_r">r</string>
+    <string name="tab_expenses">Расходы</string>
+    <string name="tab_incomes">Доходы</string>
+    <string name="tab_balance">Баланс</string>
 
+
+    <string-array name="tabs_titles">
+        <item>@string/tab_expenses</item>
+        <item>@string/tab_incomes</item>
+        <item>@string/tab_balance</item>
+    </string-array>
 
 </resources>
