@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_pattern"
+
+    tools:context="com.loftblog.moneytracker.MainActivity">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorWhite"
+        android:elevation="2dp"
+        android:orientation="horizontal"
+        android:padding="16dp">
+
+
+        <EditText
+            android:id="@+id/name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@android:color/transparent"
+            android:fontFamily="sans-serif-light"
+            android:hint="@string/title"
+            android:inputType="text"
+            android:maxLines="1"
+            android:textColor="#95989a"
+            android:textStyle="normal" />
+
+        <EditText
+            android:id="@+id/name2"
+            android:layout_width="@dimen/main_width"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:fontFamily="sans-serif-light"
+            android:gravity="right"
+            android:hint="@string/price_string"
+            android:inputType="number"
+            android:maxLines="1"
+            android:textColor="#95989a"
+            android:textStyle="normal" />
+
+        <ImageButton
+            android:id="@+id/add"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:enabled="false"
+            android:src="@drawable/ic_add_black_24dp" />
+
+    </LinearLayout>
+
+</FrameLayout>
+
