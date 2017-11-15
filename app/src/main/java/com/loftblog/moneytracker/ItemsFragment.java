@@ -1,8 +1,10 @@
 package com.loftblog.moneytracker;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.LoaderManager;
 import android.support.v4.content.AsyncTaskLoader;
@@ -19,6 +21,7 @@ import com.loftblog.moneytracker.api.Api;
 import java.io.IOException;
 import java.util.List;
 
+import static android.app.Activity.RESULT_OK;
 public class ItemsFragment extends Fragment {
 
 
@@ -70,6 +73,17 @@ public class ItemsFragment extends Fragment {
         RecyclerView recycler = view.findViewById(R.id.recycler);
         recycler.setLayoutManager(new LinearLayoutManager(getContext()));
         recycler.setAdapter(adapter);
+
+        FloatingActionButton fab = view.findViewById(R.id.fab_add_item);
+        fab.setOnClickListener(new View.OnClickListener() {
+
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), AddActivity.class);
+                intent.putExtra(AddActivity.EXTRA_TYPE, type);
+                startActivityForResult(intent, AddActivity.RC_ADD_ITEM);
+            }
+        });
+
         loadItems();
     }
 
@@ -108,6 +122,15 @@ public class ItemsFragment extends Fragment {
         }).forceLoad();
     }
 
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == AddActivity.RC_ADD_ITEM && resultCode == RESULT_OK) {
+            Item item = (Item) data.getSerializableExtra(AddActivity.RESULT_ITEM);
+            Toast toast = Toast.makeText(getContext(), item.name, Toast.LENGTH_LONG);
+            toast.show();
+        }
+    }
 
     private void showError(String error) {
         Toast.makeText(getContext(), error, Toast.LENGTH_SHORT).show();
