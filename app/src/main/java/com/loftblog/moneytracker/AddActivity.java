@@ -26,7 +26,7 @@ public class AddActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_add);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -35,9 +35,9 @@ public class AddActivity extends AppCompatActivity {
 
         type = getIntent().getStringExtra(EXTRA_TYPE);
 
-        final EditText titleEdit = findViewById(R.id.name);
-        final ImageButton addButton = findViewById(R.id.add);
-        final EditText titleEdit2 = findViewById(R.id.name2);
+        name = findViewById(R.id.name);
+        add = findViewById(R.id.add);
+        price = findViewById(R.id.name2);
 
 
         add.setOnClickListener(new View.OnClickListener() {
@@ -50,7 +50,7 @@ public class AddActivity extends AppCompatActivity {
             }
         });
 
-        titleEdit.addTextChangedListener(new TextWatcher() {
+        name.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
 
@@ -58,8 +58,8 @@ public class AddActivity extends AppCompatActivity {
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-                if (titleEdit.getText().length() != 0 && titleEdit2.getText().length() != 0)
-                    addButton.setEnabled(!TextUtils.isEmpty(s));
+                if (name.getText().length() != 0 && price.getText().length() != 0)
+                    add.setEnabled(!TextUtils.isEmpty(s));
             }
 
             @Override
@@ -69,7 +69,7 @@ public class AddActivity extends AppCompatActivity {
         });
 
 
-        titleEdit2.addTextChangedListener(new TextWatcher() {
+        price.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
 
@@ -77,7 +77,7 @@ public class AddActivity extends AppCompatActivity {
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-                addButton.setEnabled(!TextUtils.isEmpty(s));
+                add.setEnabled(!TextUtils.isEmpty(s));
             }
 
             @Override
@@ -88,28 +88,6 @@ public class AddActivity extends AppCompatActivity {
 
     }
 
-    @Override
-    protected void onStart() {
-        super.onStart();
-    }
 
-    @Override
-    protected void onResume() {
-        super.onResume();
-    }
 
-    @Override
-    protected void onPause() {
-        super.onPause();
-    }
-
-    @Override
-    protected void onStop() {
-        super.onStop();
-    }
-
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-    }
 }
