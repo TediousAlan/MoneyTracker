@@ -4,12 +4,10 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.text.Editable;
-import android.text.TextUtils;
-import android.text.TextWatcher;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.Toast;
 
 
 public class AddActivity extends AppCompatActivity {
@@ -43,46 +41,14 @@ public class AddActivity extends AppCompatActivity {
         add.setOnClickListener(new View.OnClickListener() {
 
             public void onClick(View view) {
+                if (!add.isEnabled()) {
+                    Toast.makeText(AddActivity.this, "Necessary fields not filled", Toast.LENGTH_SHORT).show();
+                    return;
+                }
                 Intent result = new Intent();
-                result.putExtra(RESULT_ITEM, new Item(name.getText().toString(), 100, type));
+                result.putExtra(RESULT_ITEM, new Item(name.getText().toString(), Integer.valueOf(price.getText().toString()), type));
                 setResult(RESULT_OK, result);
                 finish();
-            }
-        });
-
-        name.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
-            }
-
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-                if (name.getText().length() != 0 && price.getText().length() != 0)
-                    add.setEnabled(!TextUtils.isEmpty(s));
-            }
-
-            @Override
-            public void afterTextChanged(Editable s) {
-
-            }
-        });
-
-
-        price.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
-            }
-
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-                add.setEnabled(!TextUtils.isEmpty(s));
-            }
-
-            @Override
-            public void afterTextChanged(Editable s) {
-
             }
         });
 
