@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/bg_pattern"
     tools:context="com.loftblog.moneytracker.ItemsFragment">
+
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recycler"
@@ -14,9 +16,14 @@
         android:paddingLeft="5dp"
         android:paddingRight="5dp"
         android:paddingTop="15dp"
-        tools:listitems="@Layout/items"
+        tools:listitems="@Layout/items" />
 
-        />
-
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab_add_item"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="@dimen/action_button_margin"
+        android:src="@drawable/ic_add_black_57dp" />
 
 </FrameLayout>
